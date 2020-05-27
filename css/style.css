@@ -1,0 +1,322 @@
+#slider {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    background-color: #000;
+}
+
+#slider ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+
+#slider ul li {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+    overflow: hidden;
+    border: 0;
+    display: block;
+}
+
+#slider a {
+    width: 35px;
+    height: 60px;
+    margin: 0px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.2
+}
+
+#slider a:hover {
+    opacity: 0.5
+}
+
+#subuprev {
+    left: 0;
+    background: url("arrow_prev.png") no-repeat;
+    cursor: pointer;
+}
+
+#subunext {
+    right: 0;
+    background: url("arrow_next.png") no-repeat;
+    cursor: pointer;
+}
+
+.slide1 {
+    color: white;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #1892b9;
+    display: block;
+}
+
+.slide2 {
+    color: white;
+    height: 100%;
+    width: 100%;
+    background-color: #5cdb94;
+    text-align: center;
+}
+
+
+/* CIRCLE CONTAINER */
+
+.circle-box {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.innercircle {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+}
+
+.innercircle2 {
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+}
+
+
+/* KID CONTAINER */
+
+.boyimage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 2;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.boyimage img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.cld {
+    opacity: 0;
+}
+
+.cloud-container1 {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    height: 100px;
+    width: 200px;
+    animation: myanim 6s linear infinite;
+}
+
+.cloud-container2 {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    top: 100px;
+    height: 100px;
+    width: 200px;
+    animation: myanim 5s linear infinite;
+}
+
+.cloud-container3 {
+    position: absolute;
+    left: 0;
+    top: 200px;
+    z-index: 1;
+    height: 100px;
+    width: 200px;
+    animation: myanim 4s linear infinite;
+}
+
+
+/* SLIDE2 */
+
+.tilt-box {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.innertilt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+    z-index: 1;
+}
+
+.innertilt2 {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+}
+
+.teachimg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 3;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.teachimg img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+/* Letters */
+
+.letter {
+    opacity: 0;
+}
+
+.lettera {
+    position: absolute;
+    top: -130px;
+    height: 20%;
+    left: 0;
+    z-index: 2;
+    height: 380px;
+    width: 197px;
+    animation: animletters 7s linear infinite;
+}
+
+.letterb {
+    position: absolute;
+    top: -130px;
+    left: 25%;
+    z-index: 2;
+    height: 380px;
+    width: 197px;
+    animation: animletters 6s linear infinite;
+}
+
+.letterc {
+    position: absolute;
+    top: -130px;
+    left: 50%;
+    z-index: 2;
+    height: 380px;
+    width: 197px;
+    animation: animletters 5s linear infinite;
+}
+
+.letterd {
+    position: absolute;
+    top: -130px;
+    right: 0;
+    z-index: 2;
+    height: 380px;
+    width: 197px;
+    animation: animletters 4s linear infinite;
+}
+
+
+/* Slide 3 */
+
+
+/* .tilt-triangle {
+    width: 100%;
+    height: 80%;
+    position: relative;
+}
+
+.inner-tri-tilt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+    z-index: 1;
+}
+
+.inner-tri-tilt2 {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: 1s all;
+    transform: translate(-50%, -50%) scale(0.3);
+}
+
+.girl-banner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    z-index: 3;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.girl-banner img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+} */
+
+@keyframes myanim {
+    0% {
+        transform: translate3d(75px, 40px, 0px);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translate3d(60px, 50px, 0px);
+        animation-timing-function: ease-out;
+    }
+    100% {
+        transform: translate3d(75px, 40px, 0px);
+    }
+}
+
+@keyframes animletters {
+    0% {
+        animation-timing-function: ease-in;
+    }
+    50% {
+        top: -80px;
+        animation-timing-function: ease-out;
+    }
+    100% {
+        top: -130px;
+        animation-timing-function: ease-in;
+    }
+}
