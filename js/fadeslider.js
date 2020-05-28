@@ -127,6 +127,8 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
                 TweenMax.to('.boyimage', 0, { opacity: 1, delay: 2 });
                 TweenMax.to('.boyimage', 0, { opacity: 1, y: -20, delay: 2 });
                 TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
+
+
             }
 
 
@@ -164,28 +166,34 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
                 TweenMax.to('.teachimg', 0, { opacity: 1, y: -20, delay: 2 });
                 TweenMax.to('.letter', 0, { opacity: 1, delay: 2.5 });
 
+                TweenMax.to('.image1', 0.5, { opacity: 0 });
+                TweenMax.to('.image2', 1, { opacity: 0 });
+                TweenMax.to('.image3', 0.5, { opacity: 0 });
+                TweenMax.to('.image4', 1, { opacity: 0 });
+                TweenMax.to('.image5', 0.5, { opacity: 0 });
+                TweenMax.to('.image6', 0.5, { opacity: 0 });
+
             }
         }
 
         function startanim3() {
             var slide3 = document.getElementById("slide3");
-            // ----------------SLIDE 3----------------
-
-            if (slide3.style.display != "none") {
-
-                TweenMax.to('.inner-tri-tilt', 0, { scale: .5, opacity: 0 });
-                TweenMax.to('.inner-tri-tilt2', 0, { scale: .5, opacity: 0 });
-                TweenMax.to('.girl-banner', 0, { opacity: 0 });
-                TweenMax.to('.girl-banner', 0, { opacity: 0, y: 20 });
-
-            } else {
-
-                TweenMax.to('.inner-tri-tilt', 0.5, { scale: .7, opacity: 1 });
-                TweenMax.to('.inner-tri-tilt2', 0, { scale: .7, opacity: 1, delay: 1 });
-                TweenMax.to('.girl-banner', 0, { opacity: 1, delay: 2 });
-                TweenMax.to('.girl-banner', 0, { opacity: 1, y: -20, delay: 2 });
+            if (activeslide == "slide1" || activeslide == "slide2") {
+                TweenMax.to('.image1', 0, { opacity: 0 });
+                TweenMax.to('.image2', 0, { opacity: 0 });
+                TweenMax.to('.image3', 0, { opacity: 0 });
+                TweenMax.to('.image4', 0, { opacity: 0, y: "5px" });
+                TweenMax.to('.image5', 0, { opacity: 0 });
+                TweenMax.to('.image6', 0, { opacity: 0 });
             }
-
+            if (activeslide != "slide3") {
+                TweenMax.to('.image1', 0.5, { opacity: 1 });
+                TweenMax.to('.image2', 0, { opacity: 1, delay: 0.2 });
+                TweenMax.to('.image3', 0, { opacity: 1, delay: 0.4 });
+                TweenMax.to('.image4', 0, { opacity: 1, delay: 0.6, ease: "elastic.out(1, 0.3)", y: "-5px" });
+                TweenMax.to('.image5', 0, { opacity: 1, delay: 0.8 });
+                TweenMax.to('.image6', 0, { opacity: 1, delay: 1 });
+            }
 
         }
 

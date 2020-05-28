@@ -40,7 +40,8 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    opacity: 0.2
+    opacity: 0.2;
+    z-index: 20;
 }
 
 #slider a:hover {
@@ -80,8 +81,84 @@
     color: white;
     height: 100%;
     width: 100%;
-    background-color: #e6156e;
     text-align: center;
+    position: relative;
+}
+
+.image1 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.image1 img {
+    height: 100%;
+}
+
+.image2 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s;
+}
+
+.image2 img {
+    height: 100%;
+}
+
+.image3 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.image3 img {
+    height: 100%;
+}
+
+.image4 {
+    position: absolute;
+    transform: translateY(20px);
+    right: 10px;
+    z-index: 9;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.image4 img {
+    width: 100%;
+}
+
+.image5 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.image5 img {
+    height: 100%;
+}
+
+.image6 {
+    transition: 1s ease;
+    position: absolute;
+    height: 100%;
+    z-index: 8;
+    width: 60%;
+    right: 0;
+    opacity: 0;
+}
+
+.image6 img {
+    height: 100%;
 }
 
 
@@ -302,6 +379,9 @@
     left: 0;
 }
 
+
+/*KEYFRAME ANIMATIONS  */
+
 @keyframes myanim {
     0% {
         transform: translate3d(75px, 40px, 0px);
@@ -327,5 +407,17 @@
     100% {
         top: -130px;
         animation-timing-function: ease-in;
+    }
+}
+
+
+/* RESPONSIVE DESIGN WITH MEDIA QUERY */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .letter {
+        width: 140px;
+    }
+    .image5 {
+        left: -100px;
     }
 }
