@@ -6,24 +6,27 @@ var arrayLastEntry;
 var b;
 var newi = 0;
 var currCount = 0;
+var activeslide = "slide1";
 
 TweenMax.to('.innercircle', 0.5, { scale: 1, opacity: 1 });
 TweenMax.to('.innercircle2', 0, { scale: 1, opacity: 1, delay: 1 });
 TweenMax.to('.boyimage', 0, { opacity: 1, y: -20, delay: 2 });
 TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
 
+
 (function($) {
 
     jQuery.fn.fadeslider = function() {
 
         //set duration time; 
-        window.setInterval(setDuration, 4000);
+        // window.setInterval(setDuration, 8000);
 
         function setDuration() {
             if (currCount == 0) {
                 currCount = 1;
             } else {
                 $(subuSliderNext);
+
             }
 
         }
@@ -45,33 +48,43 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
 
         function subuSliderNext() {
             startanim();
+            startanim2();
+            startanim3();
             if (arrayLastEntry > newi) {
+
                 $(imgArr[newi]).fadeOut(0);
                 $(bulArr[newi]).removeClass('bulletactive');
                 ++newi;
                 $(imgArr[newi]).fadeIn(2000);
-                altTextPrint();
+
                 $(bulArr[newi]).addClass('bulletactive');
+                var getid = imgArr[newi].getAttribute("id");
+                console.log(getid);
             } else {
                 $(imgArr[newi]).fadeOut(0);
                 $(bulArr[newi]).removeClass('bulletactive');
                 newi = 0;
                 $(imgArr[newi]).fadeIn(2000);
-                altTextPrint();
+
                 $(bulArr[newi]).addClass('bulletactive');
+                getid = imgArr[newi].getAttribute("id");
+                console.log(getid);
             }
 
         };
 
         function subuSlsiderPreview() {
             startanim();
+            startanim2();
+            startanim3();
             if (newi > 0) {
                 $(bulArr[newi]).removeClass('bulletactive');
                 $(imgArr[newi]).fadeOut(0);
                 $(bulArr[newi - 1]).addClass('bulletactive');
                 $(imgArr[newi - 1]).fadeIn(2000);
-                altTextPrint();
+                getid = imgArr[newi - 1].getAttribute("id");
                 --newi;
+
             } else {
                 newi = 0;
                 $(bulArr[newi]).removeClass('bulletactive');
@@ -79,7 +92,7 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
                 newi = countChildren - 1;
                 $(bulArr[newi]).addClass('bulletactive');
                 $(imgArr[newi]).fadeIn(2000);
-                altTextPrint();
+                getid = imgArr[newi].getAttribute("id");
 
             }
 
@@ -87,11 +100,11 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
 
         function startanim() {
             var slide1 = document.getElementById("slide1");
-            var slide2 = document.getElementById("slide1");
 
-            // Slide1
+            // ----------------SLIDE 1----------------
 
             if (slide1.style.display != "none") {
+
                 TweenMax.to('.innercircle', 0, { scale: .3, opacity: 0 });
                 TweenMax.to('.innercircle2', 0, { scale: .3, opacity: 0 });
                 TweenMax.to('.boyimage', 0, { opacity: 0 });
@@ -100,6 +113,15 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
 
 
             } else {
+
+                if (activeslide == "slide1") {
+                    TweenMax.to('.innercircle', 0, { scale: .3, opacity: 0 });
+                    TweenMax.to('.innercircle2', 0, { scale: .3, opacity: 0 });
+                    TweenMax.to('.boyimage', 0, { opacity: 0 });
+                    TweenMax.to('.boyimage', 0, { opacity: 0, y: 20 });
+                    TweenMax.to('.cld', 0, { opacity: 0, delay: 2.5 });
+                }
+
                 TweenMax.to('.innercircle', 0.5, { scale: 1, opacity: 1 });
                 TweenMax.to('.innercircle2', 0, { scale: 1, opacity: 1, delay: 1 });
                 TweenMax.to('.boyimage', 0, { opacity: 1, delay: 2 });
@@ -107,29 +129,64 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
                 TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
             }
 
-            // Slide 2
+
+        }
+
+        function startanim2() {
+            TweenMax.to('.innertilt', 0, { scale: .3, opacity: 0 });
+            TweenMax.to('.innertilt2', 0, { scale: .3, opacity: 0 });
+            TweenMax.to('.teachimg', 0, { opacity: 0 });
+            TweenMax.to('.teachimg', 0, { opacity: 0, y: 20 });
+            TweenMax.to('.letter', 0, { opacity: 0, delay: 2.5 });
+            var slide2 = document.getElementById("slide2");
+            // ----------------SLIDE 2----------------
 
             if (slide2.style.display != "none") {
-                TweenMax.to('.innertilt', 0.5, { scale: .5, opacity: 1 });
-                TweenMax.to('.innertilt2', 0, { scale: .5, opacity: 1, delay: 1 });
-                TweenMax.to('.teachimg', 0, { opacity: 1, delay: 2 });
-                TweenMax.to('.teachimg', 0, { opacity: 1, y: -20, delay: 2 });
-                TweenMax.to('.letter', 0, { opacity: 1, delay: 2.5 });
-            } else {
+
                 TweenMax.to('.innertilt', 0, { scale: .3, opacity: 0 });
                 TweenMax.to('.innertilt2', 0, { scale: .3, opacity: 0 });
                 TweenMax.to('.teachimg', 0, { opacity: 0 });
                 TweenMax.to('.teachimg', 0, { opacity: 0, y: 20 });
                 TweenMax.to('.letter', 0, { opacity: 0, delay: 2.5 });
-            }
 
+            } else {
+                if (activeslide == "slide2") {
+                    TweenMax.to('.innertilt', 0, { scale: .3, opacity: 0 });
+                    TweenMax.to('.innertilt2', 0, { scale: .3, opacity: 0 });
+                    TweenMax.to('.teachimg', 0, { opacity: 0 });
+                    TweenMax.to('.teachimg', 0, { opacity: 0, y: 20 });
+                    TweenMax.to('.letter', 0, { opacity: 0, delay: 2.5 });
+                }
+
+                TweenMax.to('.innertilt', 0.5, { scale: .5, opacity: 1 });
+                TweenMax.to('.innertilt2', 0, { scale: .5, opacity: 1, delay: 1 });
+                TweenMax.to('.teachimg', 0, { opacity: 1, delay: 2 });
+                TweenMax.to('.teachimg', 0, { opacity: 1, y: -20, delay: 2 });
+                TweenMax.to('.letter', 0, { opacity: 1, delay: 2.5 });
+
+            }
         }
 
-        var vParentDiv = $('<div id="sliderBulet"></div>');
-        $('#' + subu).append(vParentDiv);
-        for (newk = 0; newk < countChildren; newk++) {
-            var vChildDiv = $('<div>', { 'id': 'b' + newk });
-            $('#sliderBulet').append(vChildDiv);
+        function startanim3() {
+            var slide3 = document.getElementById("slide3");
+            // ----------------SLIDE 3----------------
+
+            if (slide3.style.display != "none") {
+
+                TweenMax.to('.inner-tri-tilt', 0, { scale: .5, opacity: 0 });
+                TweenMax.to('.inner-tri-tilt2', 0, { scale: .5, opacity: 0 });
+                TweenMax.to('.girl-banner', 0, { opacity: 0 });
+                TweenMax.to('.girl-banner', 0, { opacity: 0, y: 20 });
+
+            } else {
+
+                TweenMax.to('.inner-tri-tilt', 0.5, { scale: .7, opacity: 1 });
+                TweenMax.to('.inner-tri-tilt2', 0, { scale: .7, opacity: 1, delay: 1 });
+                TweenMax.to('.girl-banner', 0, { opacity: 1, delay: 2 });
+                TweenMax.to('.girl-banner', 0, { opacity: 1, y: -20, delay: 2 });
+            }
+
+
         }
 
         var bulArr = [];
@@ -145,21 +202,23 @@ TweenMax.to('.cld', 0, { opacity: 1, delay: 2.5 });
             var id = $(this).attr("id");
             id = id.replace('b', '');
             if (newi < id) {
+                console.log(imgArr[newi]);
                 $(imgArr[newi]).fadeOut(0);
                 $(bulArr[newi]).removeClass('bulletactive');
                 $(bulArr[id]).addClass('bulletactive');
                 $(imgArr[id]).fadeIn(1000);
                 newi = id;
                 currCount = 0;
-                altTextPrint();
+
             } else {
+                console.log(imgArr[newi]);
                 $(imgArr[newi]).fadeOut(0);
                 $(bulArr[newi]).removeClass('bulletactive');
                 $(bulArr[id]).addClass('bulletactive');
                 $(imgArr[id]).fadeIn(1000);
                 newi = id;
                 currCount = 0;
-                altTextPrint();
+
             }
         });
         $('#' + subu).append('<a id="subuprev">', '<a id="subunext">');
