@@ -1,3 +1,27 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #e1e1e1;
+}
+
+section,
+article {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#contain {
+    width: 100%;
+    height: 100%;
+}
+
 #slider {
     width: 100%;
     height: 100%;
@@ -419,5 +443,8 @@
     }
     .image5 {
         left: -100px;
+    }
+    #slide3 {
+        display: none!important;
     }
 }
