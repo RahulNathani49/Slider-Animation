@@ -11,5 +11,5 @@
 </ul>
 <br />
 <br />
-<p> Find the <a href="http://subratadhal.com/jquery/fadeslider/" target="_blank">Live Demo</a> url on <a href="http://subratadhal.com/" target="_blank">subratadhal.com</a></p>
+<a href="https://slider-animationn.netlify.app/">VISIT DEMO </a>
 
